@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#17110d">
 <meta name="format-detection" content="telephone=no">
-<meta name="description" content="Wedding invitation of Deevena & Sasi Preetham — 23 November 2026">
+<meta name="description" content="Betrothal & Wedding invitation of Deevena & Sasi Preetham — 21 & 23 November 2026">
 <title>D & S | Wedding Invitation</title>
 
 <!-- Open Graph / Social Preview -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Deevena & Sasi Preetham — Wedding Invitation">
-<meta property="og:description" content="23 November 2026 · Adabala Gardens, Palakollu">
+<meta property="og:title" content="Deevena & Sasi Preetham — Betrothal & Wedding Invitation">
+<meta property="og:description" content="Betrothal: 21 Nov 2026 (Guntur) · Wedding: 23 Nov 2026 (Palakollu)">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -492,11 +492,17 @@ h2, .section-heading{
   color:var(--muted);
 }
 
-/* Save the Date Section */
+/* Save the Date Cards Grid */
+.save-dates{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:26px;
+  margin-top:36px;
+}
 .date-card{
-  max-width:620px;
-  margin:36px auto 0;
-  padding:48px 28px;
+  width:100%;
+  margin:0;
+  padding:44px 24px;
   border-radius:32px;
   border:1px solid var(--glass-border);
   background:linear-gradient(145deg, rgba(255,255,255,0.92), rgba(247,238,226,0.85));
@@ -516,8 +522,8 @@ h2, .section-heading{
   margin:16px 0 8px;
   font-family:'Cinzel', serif;
   font-weight:600;
-  font-size:clamp(24px, 3.6vw, 32px);
-  letter-spacing:3px;
+  font-size:clamp(22px, 3vw, 28px);
+  letter-spacing:2.5px;
   color:var(--ink);
 }
 .date-card .time{
@@ -526,6 +532,11 @@ h2, .section-heading{
   font-size:13px;
   letter-spacing:3px;
   text-transform:uppercase;
+}
+.date-card .loc-note{
+  margin-top:10px;
+  font:italic 19px/1.4 "Cormorant Garamond", serif;
+  color:#5c4536;
 }
 
 /* Countdown */
@@ -599,11 +610,19 @@ h2, .section-heading{
 }
 .timeline-copy{margin:0;color:var(--muted);font:20px/1.5 "Cormorant Garamond", serif}
 
-/* Venue Card */
+/* Venue Cards Grid */
+.venues-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:26px;
+  margin-top:35px;
+  position:relative;
+  z-index:1;
+}
 .venue-card{
-  max-width:680px;
-  margin:35px auto 0;
-  padding:48px 28px;
+  width:100%;
+  margin:0;
+  padding:46px 24px;
   border-radius:32px;
   background:var(--glass-bg);
   backdrop-filter:blur(16px);
@@ -611,25 +630,52 @@ h2, .section-heading{
   border:1px solid var(--glass-border);
   box-shadow:var(--glass-shadow);
   position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
-.venue-icon{font-size:30px;margin-bottom:8px}
-.venue-card h3{
-  margin:0 0 14px;
+.venue-event-tag{
   font-family:'Cinzel', serif;
-  font-size:clamp(26px, 4vw, 36px);
+  font-size:10px;
+  letter-spacing:3.5px;
+  font-weight:600;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.venue-icon{font-size:28px;margin-bottom:6px}
+.venue-card h3{
+  margin:0 0 12px;
+  font-family:'Cinzel', serif;
+  font-size:clamp(22px, 3vw, 28px);
   font-weight:600;
   letter-spacing:1px;
 }
 .address{
-  margin:0 auto 28px;
-  font:22px/1.55 "Cormorant Garamond", serif;
+  margin:0 auto 22px;
+  font:20px/1.55 "Cormorant Garamond", serif;
   color:var(--muted);
+}
+.contact-phones{
+  margin:-10px auto 24px;
+  font:600 18px/1.5 "Cormorant Garamond", serif;
+  color:var(--ink);
+}
+.contact-phones a{
+  border-bottom:1px dotted var(--gold-border);
+  transition:color .2s ease;
+}
+.contact-phones a:hover{
+  color:#a67425;
 }
 .buttons{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:12px;
+  gap:10px;
+}
+.buttons .btn{
+  padding:12px 22px;
+  font-size:10px;
 }
 .btn.primary{background:linear-gradient(135deg,#38251a,#563a29);color:#fff}
 .btn.secondary{background:#fff;color:var(--ink);border:1px solid var(--gold-border)}
@@ -783,6 +829,8 @@ footer{
   .mono{font-size:30px;line-height:1.4 !important;padding:10px 12px !important;overflow:visible !important;}
   .section{padding:70px 18px}
   .couple{grid-template-columns:1fr;gap:18px}
+  .save-dates{grid-template-columns:1fr;gap:18px}
+  .venues-grid{grid-template-columns:1fr;gap:22px}
   .count{gap:8px}
   .counter{padding:20px 4px}
   .quick-dock{bottom:18px;gap:4px;padding:6px 8px}
@@ -844,7 +892,8 @@ if('IntersectionObserver' in window){
 
 <!-- Floating Quick Dock -->
 <nav class="quick-dock" id="quickDock" aria-label="Quick Actions">
-  <a class="dock-link accent" target="_blank" rel="noopener" href="https://maps.app.goo.gl/LtFcmX7WESMcbg2h9">Directions</a>
+  <a class="dock-link accent" href="#venues">Venues</a>
+  <a class="dock-link" href="#program">Schedule</a>
   <a class="dock-link" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=D%20%26%20S%20Wedding&dates=20261123T100000/20261123T130000&details=Wedding%20Ceremony%20of%20Deevena%20%26%20Sasi%20Preetham&location=Adabala%20Gardens%2C%20Palakollu%2C%20Andhra%20Pradesh" target="_blank" rel="noopener">Calendar</a>
 </nav>
 
@@ -898,7 +947,7 @@ if('IntersectionObserver' in window){
     <div class="names">Deevena</div>
     <div class="weds">AND</div>
     <div class="names">Sasi Preetham</div>
-    <div class="hero-date">23rd November 2026 · 10:00 AM</div>
+    <div class="hero-date">21st &amp; 23rd November 2026</div>
     <div class="scroll-note">Scroll to discover ↓</div>
   </div>
 </section>
@@ -938,25 +987,41 @@ if('IntersectionObserver' in window){
   </div>
 </section>
 
-<!-- Save the Date Section -->
+<!-- Save the Dates Section -->
 <section class="section alt reveal">
   <div class="section-inner">
-    <div class="section-label shimmer-text">Save the date</div>
-    <h2>The Big Day</h2>
+    <div class="section-label shimmer-text">Save the dates</div>
+    <h2>The Celebrations</h2>
     <div class="ornament divider">
       <span class="line"></span><span class="star">✦</span><span class="line"></span>
     </div>
 
-    <div class="date-card tilt-card">
-      <div class="filigree top-left" aria-hidden="true" style="width:50px;height:50px">
-        <svg viewBox="0 0 100 100"><path d="M14,86 Q14,14 86,14" stroke="#c59b3f" stroke-width="1.4" fill="none"/><circle cx="14" cy="86" r="3" fill="#c59b3f"/></svg>
+    <div class="save-dates">
+      <div class="date-card tilt-card">
+        <div class="filigree top-left" aria-hidden="true" style="width:46px;height:46px">
+          <svg viewBox="0 0 100 100"><path d="M14,86 Q14,14 86,14" stroke="#c59b3f" stroke-width="1.4" fill="none"/><circle cx="14" cy="86" r="3" fill="#c59b3f"/></svg>
+        </div>
+        <div class="filigree top-right" aria-hidden="true" style="width:46px;height:46px">
+          <svg viewBox="0 0 100 100"><path d="M14,86 Q14,14 86,14" stroke="#c59b3f" stroke-width="1.4" fill="none"/><circle cx="14" cy="86" r="3" fill="#c59b3f"/></svg>
+        </div>
+        <div class="tag shimmer-text">Betrothal</div>
+        <div class="date">21st November 2026</div>
+        <div class="time">Saturday · 10:00 AM</div>
+        <div class="loc-note">Prayer at our residence in Gorantla, Guntur · Lunch follows</div>
       </div>
-      <div class="filigree top-right" aria-hidden="true" style="width:50px;height:50px">
-        <svg viewBox="0 0 100 100"><path d="M14,86 Q14,14 86,14" stroke="#c59b3f" stroke-width="1.4" fill="none"/><circle cx="14" cy="86" r="3" fill="#c59b3f"/></svg>
+
+      <div class="date-card tilt-card">
+        <div class="filigree top-left" aria-hidden="true" style="width:46px;height:46px">
+          <svg viewBox="0 0 100 100"><path d="M14,86 Q14,14 86,14" stroke="#c59b3f" stroke-width="1.4" fill="none"/><circle cx="14" cy="86" r="3" fill="#c59b3f"/></svg>
+        </div>
+        <div class="filigree top-right" aria-hidden="true" style="width:46px;height:46px">
+          <svg viewBox="0 0 100 100"><path d="M14,86 Q14,14 86,14" stroke="#c59b3f" stroke-width="1.4" fill="none"/><circle cx="14" cy="86" r="3" fill="#c59b3f"/></svg>
+        </div>
+        <div class="tag shimmer-text">Wedding Ceremony</div>
+        <div class="date">23rd November 2026</div>
+        <div class="time">Monday · 10:00 AM</div>
+        <div class="loc-note">Adabala Gardens, Palakollu</div>
       </div>
-      <div class="tag shimmer-text">Our Wedding Ceremony</div>
-      <div class="date">23rd November 2026</div>
-      <div class="time">Monday · 10:00 AM</div>
     </div>
   </div>
 </section>
@@ -981,13 +1046,20 @@ if('IntersectionObserver' in window){
 </section>
 
 <!-- Ceremony & Program Timeline -->
-<section class="section reveal">
+<section class="section reveal" id="program">
   <div class="section-label shimmer-text">The celebration begins</div>
   <h2>Ceremony &amp; Program</h2>
   <div class="ornament divider">
     <span class="line"></span><span class="star">✦</span><span class="line"></span>
   </div>
   <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot" aria-hidden="true"></div>
+      <div class="timeline-time shimmer-text">10:00 AM · 21 November 2026</div>
+      <div class="timeline-title">Betrothal &amp; Fellowship Lunch</div>
+      <p class="timeline-copy">Prayer at our residence in Gorantla, Guntur, followed by celebratory lunch with beloved family and friends.</p>
+    </div>
+
     <div class="timeline-item">
       <div class="timeline-dot" aria-hidden="true"></div>
       <div class="timeline-time shimmer-text">10:00 AM · 23 November 2026</div>
@@ -1010,30 +1082,59 @@ if('IntersectionObserver' in window){
 </section>
 
 <!-- Venue Section -->
-<section class="section reveal">
+<section class="section reveal" id="venues">
   <div class="bokeh-layer" aria-hidden="true">
     <div class="bokeh-orb orb-4"></div>
   </div>
   <div class="section-inner">
-    <div class="section-label shimmer-text">The celebration</div>
-    <h2>Meet Us at the Garden</h2>
+    <div class="section-label shimmer-text">The celebrations</div>
+    <h2>Celebration Venues</h2>
     <div class="ornament divider">
       <span class="line"></span><span class="star">✦</span><span class="line"></span>
     </div>
 
-    <div class="venue-card tilt-card">
-      <div class="filigree top-left" aria-hidden="true" style="width:50px;height:50px">
-        <svg viewBox="0 0 100 100"><path d="M14,86 Q14,14 86,14" stroke="#c59b3f" stroke-width="1.4" fill="none"/><circle cx="14" cy="86" r="3" fill="#c59b3f"/></svg>
+    <div class="venues-grid">
+      <!-- Betrothal Venue Card -->
+      <div class="venue-card tilt-card">
+        <div class="filigree top-left" aria-hidden="true" style="width:46px;height:46px">
+          <svg viewBox="0 0 100 100"><path d="M14,86 Q14,14 86,14" stroke="#c59b3f" stroke-width="1.4" fill="none"/><circle cx="14" cy="86" r="3" fill="#c59b3f"/></svg>
+        </div>
+        <div class="filigree top-right" aria-hidden="true" style="width:46px;height:46px">
+          <svg viewBox="0 0 100 100"><path d="M14,86 Q14,14 86,14" stroke="#c59b3f" stroke-width="1.4" fill="none"/><circle cx="14" cy="86" r="3" fill="#c59b3f"/></svg>
+        </div>
+        <div>
+          <div class="venue-event-tag shimmer-text">Betrothal · 21 Nov 2026</div>
+          <div class="venue-icon shimmer-text" aria-hidden="true">⌖</div>
+          <h3>Our Residence</h3>
+          <p class="address"># Geetha Enclave, Flat No. 101,<br>Sri Lakshmi Nagar 2nd Line,<br>Gorantla, Guntur</p>
+          <div class="contact-phones">
+            Cell: <a href="tel:9441479789">94414 79789</a>, <a href="tel:7780372792">77803 72792</a>
+          </div>
+        </div>
+        <div class="buttons">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://maps.app.goo.gl/V5TBTdeD3eX9T4FW8?g_st=aw">View Directions</a>
+          <a class="btn secondary" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=D%20%26%20S%20Betrothal&dates=20261121T100000/20261121T130000&details=Betrothal%20Prayer%20%26%20Lunch%20of%20Deevena%20%26%20Sasi%20Preetham&location=Geetha%20Enclave%2C%20Flat%20No.%20101%2C%20Sri%20Lakshmi%20Nagar%202nd%20Line%2C%20Gorantla%2C%20Guntur" target="_blank" rel="noopener">Google Calendar</a>
+        </div>
       </div>
-      <div class="filigree top-right" aria-hidden="true" style="width:50px;height:50px">
-        <svg viewBox="0 0 100 100"><path d="M14,86 Q14,14 86,14" stroke="#c59b3f" stroke-width="1.4" fill="none"/><circle cx="14" cy="86" r="3" fill="#c59b3f"/></svg>
-      </div>
-      <div class="venue-icon shimmer-text" aria-hidden="true">⌖</div>
-      <h3>Adabala Gardens</h3>
-      <p class="address">Saibaba Temple Road<br>Palakollu, Andhra Pradesh 534260</p>
-      <div class="buttons">
-        <a class="btn primary" target="_blank" rel="noopener" href="https://maps.app.goo.gl/LtFcmX7WESMcbg2h9">View Directions</a>
-        <a class="btn secondary" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=D%20%26%20S%20Wedding&dates=20261123T100000/20261123T130000&details=Wedding%20Ceremony%20of%20Deevena%20%26%20Sasi%20Preetham&location=Adabala%20Gardens%2C%20Palakollu%2C%20Andhra%20Pradesh" target="_blank" rel="noopener">Google Calendar</a>
+
+      <!-- Wedding Venue Card -->
+      <div class="venue-card tilt-card">
+        <div class="filigree top-left" aria-hidden="true" style="width:46px;height:46px">
+          <svg viewBox="0 0 100 100"><path d="M14,86 Q14,14 86,14" stroke="#c59b3f" stroke-width="1.4" fill="none"/><circle cx="14" cy="86" r="3" fill="#c59b3f"/></svg>
+        </div>
+        <div class="filigree top-right" aria-hidden="true" style="width:46px;height:46px">
+          <svg viewBox="0 0 100 100"><path d="M14,86 Q14,14 86,14" stroke="#c59b3f" stroke-width="1.4" fill="none"/><circle cx="14" cy="86" r="3" fill="#c59b3f"/></svg>
+        </div>
+        <div>
+          <div class="venue-event-tag shimmer-text">Wedding · 23 Nov 2026</div>
+          <div class="venue-icon shimmer-text" aria-hidden="true">⌖</div>
+          <h3>Adabala Gardens</h3>
+          <p class="address">Saibaba Temple Road<br>Palakollu, Andhra Pradesh 534260</p>
+        </div>
+        <div class="buttons">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://maps.app.goo.gl/LtFcmX7WESMcbg2h9">View Directions</a>
+          <a class="btn secondary" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=D%20%26%20S%20Wedding&dates=20261123T100000/20261123T130000&details=Wedding%20Ceremony%20of%20Deevena%20%26%20Sasi%20Preetham&location=Adabala%20Gardens%2C%20Palakollu%2C%20Andhra%20Pradesh" target="_blank" rel="noopener">Google Calendar</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1047,7 +1148,7 @@ if('IntersectionObserver' in window){
   <p>We look forward to celebrating this beautiful beginning with you.</p>
 </section>
 
-<footer>D &amp; S · 23 NOVEMBER 2026</footer>
+<footer>D &amp; S · 21 &amp; 23 NOVEMBER 2026</footer>
 
 </main>
 
